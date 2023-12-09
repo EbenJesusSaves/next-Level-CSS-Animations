@@ -28,14 +28,25 @@ ul {
   width: 5vmin;
   border-radius: 50%;
   background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
-  animation: slide-right 2s cubic-bezier(0.8,-0.62, 0.58, 1) infinite;
+  animation: slide-right 4s cubic-bezier(0.8,-0.62, 0.58, 1);
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
 }
 
 @keyframes slide-right  {
-  from{
-    transform: translateX(0);
+  0%{
+    transform: none;
   } 
+  25%{
+    transform: translateX(20vw);
+  } 
+  50%{
+    transform: translateX(20vw) translateY(20vw);
+  } 
+  75%{ 
+    transform: translateX(0vw) translateY(20vw);
+  }
   to{ 
-    transform: translateX(100vw);
+    transform: translateX(0vw) translateY(0vw);
   }
 }
